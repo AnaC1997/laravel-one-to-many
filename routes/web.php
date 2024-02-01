@@ -4,11 +4,12 @@
 use App\Http\Controllers\Admin\ProjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController; //<---- Import del controller precedentemente creato!
- 
+use App\Models\Project;
  /* ... */
 
  Route::get('/', function () {
- 	return view('welcome');
+	$projects = Project::all();
+	return view('welcome', compact('projects'));
  });
 
  Route::middleware(['auth'])
