@@ -22,7 +22,6 @@ class StoreAutenticationModelRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
         ];
     }
 }
