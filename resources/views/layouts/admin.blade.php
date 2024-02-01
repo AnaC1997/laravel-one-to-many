@@ -51,6 +51,12 @@
                                     <i class="fa-solid fa-folder fa-lg fa-fw"></i> Progetti
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.types.index' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.types.index') }}">
+                                    <i class="fa-solid fa-circle fa-lg fa-fw"></i> Categoria
+                                </a>
+                            </li>
 
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ route('logout') }}"
