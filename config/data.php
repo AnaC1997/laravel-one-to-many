@@ -7,6 +7,7 @@ return [
         'image' => 'https://placekitten.com/800/600', // Immagine a caso di gattino
         'dataCreation' => '2024-02-01',
         'language' => 'Italiano',
+        'type_id'=> 3
     ],
     [
         'name' => 'App Mobile Fitness',
@@ -14,6 +15,7 @@ return [
         'image' => 'https://placebear.com/800/600', // Immagine a caso di orso
         'dataCreation' => '2024-02-02',
         'language' => 'Inglese',
+        'type_id'=> 2
     ],
     [
         'name' => 'Piattaforma di Apprendimento Online',
@@ -21,6 +23,7 @@ return [
         'image' => 'https://placekitten.com/800/601', // Immagine a caso di gattino
         'dataCreation' => '2024-02-03',
         'language' => 'Spagnolo',
+        'type_id'=> 1
     ],
     [
         'name' => 'App di Viaggio Personalizzata',
@@ -28,6 +31,7 @@ return [
         'image' => 'https://placebear.com/800/601', // Immagine a caso di orso
         'dataCreation' => '2024-02-04',
         'language' => 'Francese',
+        'type_id'=> 5
     ],
     [
         'name' => 'Piattaforma di Gestione Progetti',
@@ -35,6 +39,6 @@ return [
         'image' => 'https://placekitten.com/800/602', // Immagine a caso di gattino
         'dataCreation' => '2024-02-05',
         'language' => 'Tedesco',
+        'type_id'=> 6
     ],
 ];
-?>

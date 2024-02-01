@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->foreignId('type_id')->nullable()->after('id')->constrained()->nullOnDelete;
+
+              //$table->unsignedBigInteger("type_id")->nullable()->after("id");
+            //$table->foreign("type_id")->references("id")->on("types")->nullOnDelete();
+
+            $table->foreignId('type_id')->nullable()->after("id")->constrained()->nullOnDelete();
         });
     }
 
@@ -22,11 +26,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            //elimina il vincolo e rende la colonna un normale intero
-            $table->dropForeign('projects_type_id_foreign');
-        
-            //elimina la colonna
-            $table->dropColumn('type_id');
+            $table->dropForeign('projects_type_id_foreign'); //elimina il vincolo e rende la colonna un normale intero
+            $table->dropColumn('type_id'); //elimina la colonna
             //
         });
     }
