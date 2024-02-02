@@ -26,7 +26,8 @@ class ProjectRequest extends FormRequest
             "description" => ["required", "min:5", "max:300"],
             "image" => ["required", "min:5", "max:300"],
             "dataCreation" => ["required", "min:5", "max:100"],
-            "language" => ["required", "min:3", "max:200"]
+            "language" => ["required", "min:3", "max:200"],
+            "type_id" => ["nullable", "exists:types,id"]
         ];
     }
 }

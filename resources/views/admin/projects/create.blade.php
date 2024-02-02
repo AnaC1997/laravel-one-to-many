@@ -57,6 +57,15 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+                <div class="mb-3">
+                    <label for="type_id" class="form-label">seleziona una categoria</label>
+                    <select name="type_id" id="type_id" class="form-select">
+                        <option selected value=" "> </option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-primary">Inserisci</button>
             </form>
         </div>

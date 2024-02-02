@@ -14,7 +14,13 @@ class Project extends Model
         "description",
         "image",
         "dataCreation",
-        "language"
+        "language",
+        "type_id",
+       
 
     ];
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

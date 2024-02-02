@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
@@ -21,6 +22,7 @@ class ProjectController extends Controller
             "image"=> "required|min:5|max:300",
             "dataCreation"=> "required|min:5|max:100",
             "language"=> "required|min:3|max:200",
+            "type_id"=> "nullable",
             ])->validate();
 
             return $validated;
@@ -36,7 +38,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $types = Type::all();
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
@@ -66,8 +69,9 @@ class ProjectController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Project $project)
-    {
-        return view('admin.projects.edit', compact('project'));
+    { 
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project','types'));
     }
 
     /**
@@ -81,6 +85,7 @@ class ProjectController extends Controller
             $dati_validati =$this->validation($data);
     
             $project->update($dati_validati);
+
     
             return redirect()->route('admin.projects.show', $project->id);
     
